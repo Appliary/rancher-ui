@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="//releases.rancher.com/ui/latest-2.5/assets/images/logos/favicon.ico">
+    <title>Rancher</title>
+    <!-- 2.5-dev -->
+    <meta name="description" content="">
+    <style>
+      .nav-main, body {
+        border-left: 5px grey solid;
+      }
+      @media screen and (min-width: 768px) {
+        .instances .sub-row td {
+          height: 0;
+          padding: 0;
+        }
+
+        .instances .sub-row .scale-arrow {
+          position: relative;
+          top: -10px;
+          background: none;
+        }
+
+        .instances .sub-row .scale-arrow::before{
+          display: none;
+        }
+
+        .instances .sub-row .scale-arrow button:first-child{
+          margin-right: 27px;
+        }
+
+        .instances .sub-row .scale-arrow button:last-child{
+          margin-left: 27px;
+        }
+
+        .instances .sub-row .pt-20, .instances .sub-row .pb-20{
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+        }
+
+        .instances .icon-play {
+          opacity: 0;
+        }
+
+        .instances .sub-row .vertical-middle{
+          position: relative;
+          top: -5px;
+        }
+
+        .instances .group-row td:first-child button {
+          float: right;
+          margin-left: 5px;
+        }
+      }
+    </style>
+
+<meta name="alert/config/environment" content="%7B%22modulePrefix%22%3A%22alert%22%2C%22environment%22%3A%22production%22%7D" />
+<meta name="global-admin/config/environment" content="%7B%22modulePrefix%22%3A%22global-admin%22%2C%22environment%22%3A%22production%22%2C%22APP%22%3A%7B%7D%7D" />
+<meta name="istio/config/environment" content="%7B%22modulePrefix%22%3A%22istio%22%2C%22environment%22%3A%22production%22%7D" />
+<meta name="logging/config/environment" content="%7B%22modulePrefix%22%3A%22logging%22%2C%22environment%22%3A%22production%22%7D" />
+<meta name="login/config/environment" content="%7B%22modulePrefix%22%3A%22login%22%2C%22environment%22%3A%22production%22%7D" />
+<meta name="monitoring/config/environment" content="%7B%22modulePrefix%22%3A%22monitoring%22%2C%22environment%22%3A%22production%22%7D" />
+<meta name="nodes/config/environment" content="%7B%22modulePrefix%22%3A%22nodes%22%2C%22environment%22%3A%22production%22%7D" />
+<meta name="pipeline/config/environment" content="%7B%22modulePrefix%22%3A%22pipeline%22%2C%22environment%22%3A%22production%22%7D" />
+    <link id="vendor" rel="stylesheet">
+    <link id="theme" rel="stylesheet">
+    <meta name="ui/config/asset-manifest" content="%7B%22bundles%22%3A%7B%22alert%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22//releases.rancher.com/ui/latest-2.5/engines-dist/alert/assets/engine-vendor.js%3F2.5-dev%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22//releases.rancher.com/ui/latest-2.5/engines-dist/alert/assets/engine.js%3F2.5-dev%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22global-admin%22%3A%7B%22assets%22%3A%5B%5D%7D%2C%22istio%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22//releases.rancher.com/ui/latest-2.5/engines-dist/istio/assets/engine-vendor.js%3F2.5-dev%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22//releases.rancher.com/ui/latest-2.5/engines-dist/istio/assets/engine.js%3F2.5-dev%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22logging%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22//releases.rancher.com/ui/latest-2.5/engines-dist/logging/assets/engine-vendor.js%3F2.5-dev%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22//releases.rancher.com/ui/latest-2.5/engines-dist/logging/assets/engine.js%3F2.5-dev%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22login%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22//releases.rancher.com/ui/latest-2.5/engines-dist/login/assets/engine-vendor.js%3F2.5-dev%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22//releases.rancher.com/ui/latest-2.5/engines-dist/login/assets/engine.js%3F2.5-dev%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22monitoring%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22//releases.rancher.com/ui/latest-2.5/engines-dist/monitoring/assets/engine-vendor.js%3F2.5-dev%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22//releases.rancher.com/ui/latest-2.5/engines-dist/monitoring/assets/engine.js%3F2.5-dev%22%2C%22type%22%3A%22js%22%7D%5D%7D%2C%22nodes%22%3A%7B%22assets%22%3A%5B%5D%7D%2C%22pipeline%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22//releases.rancher.com/ui/latest-2.5/engines-dist/pipeline/assets/engine-vendor.js%3F2.5-dev%22%2C%22type%22%3A%22js%22%7D%2C%7B%22uri%22%3A%22//releases.rancher.com/ui/latest-2.5/engines-dist/pipeline/assets/engine.js%3F2.5-dev%22%2C%22type%22%3A%22js%22%7D%5D%7D%7D%7D" />
+  </head>
+  <body>
+
+    <script src="//releases.rancher.com/ui/latest-2.5/assets/vendor.js"></script>
+    <div id="ember-basic-dropdown-wormhole"></div>
+    <section id="ie-not-supported" style="display: none; text-align: center; font-family: Prompt, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, sans-serif;">
+      <br><br>
+      <br><br>
+      <h3>Sorry, IE and Edge are not supported.</h3>
+    </section>
+
+    <script>
+      function manageBrowserSupport() {
+        var agent = window.navigator.userAgent.toLowerCase();
+
+        if ( agent.indexOf('msie ') >= 0 || agent.indexOf('trident/') >= 0 || agent.indexOf('edge/') >= 0 ) {
+          document.getElementById('ie-not-supported').style.display = 'block';
+        } else {
+          var uiScript = document.createElement('script');
+          uiScript.src = "//releases.rancher.com/ui/latest-2.5/assets/ui.js";
+
+          document.body.appendChild(uiScript);
+        }
+      }
+      manageBrowserSupport();
+
+      function hashColor(str){
+        var hash = 5381;
+        for (var i = 0; i < str.length; i++) {
+          hash = ((hash << 5) + hash) + str.charCodeAt(i); /* hash * 33 + c */
+        }
+        var r = (hash & 0xFF0000) >> 16;
+        var g = (hash & 0x00FF00) >> 8;
+        var b = hash & 0x0000FF;
+        return "#" + ("0" + r.toString(16)).substr(-2) + ("0" + g.toString(16)).substr(-2) + ("0" + b.toString(16)).substr(-2);
+      }
+
+      function draw(){
+        // Open sub-row
+        Array
+          .from(document.querySelectorAll('.instances .icon-play'))
+          .forEach(x => {
+            if(!x.className.includes('icon-rotate-90')) x.click();
+          });
+
+        // Add multi-scale btns for Workloads
+        const tab = document.querySelector('.tab-nav .active');
+        if(tab && tab.innerText == 'Workloads') {
+          Array
+            .from(document.querySelectorAll('.instances .group-row td[colspan="6"]'))
+            .forEach(x => {
+              if (x.dataset.multiscale) return;
+              x.dataset.multiscale = true;
+
+              addBtn('plus', 'last', x);
+              addBtn('minus', 'first', x);
+            });
+        }
+
+        // Color Cluster
+        try {
+          const cluster = document.querySelector('.nav-main span').textContent;
+          document.title = cluster;
+          const color = hashColor(cluster);
+          document.querySelector('.nav-main').style.borderLeftColor = color;
+          document.body.style.borderLeftColor = color;
+        } catch(e) {}
+      }
+
+      function addBtn(icon, child, parent){
+        const btn = document.createElement('button');
+        btn.className += 'btn btn-xs bg-primary';
+        btn.innerHTML = `<i class="icon icon-${icon} icon-fw"></i>`;
+        btn.onclick = e => {
+          const btns = e.path
+            .find(p => p.tagName == 'TBODY')
+            .querySelectorAll(`.sub-row .scale-arrow button:${child}-child`);
+          Array.from(btns).forEach(x => {console.log(x);x.click()});
+        };
+        parent.appendChild(btn);
+      }
+
+      setInterval(draw, 1000);
+    </script>
+  </body>
+</html>
