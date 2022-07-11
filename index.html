@@ -12,14 +12,31 @@
       .nav-main, body {
           border-left: 5px grey solid;
       }
-      .main-row td .text-small a[href^="http://"] {
-          width: 10px;
-          border-radius: 5px;
+      .main-row td .text-small.clip {
+        white-space: normal;
+      }
+      .main-row td .text-small a {
           display: inline-block;
-          background-color: #cbe4f6;
+          box-sizing: border-box;
+          height: 18px;
+          max-width: 18px;
+          padding: 0 9px;
+          border-radius: 9px;
           overflow: hidden;
-          height: 10px;
+          white-space: nowrap;
+          transition: max-width 0.1s linear;
           font-size: 0;
+      }
+      .main-row td .text-small a:hover {
+          max-width: 300px;
+          font-size: 12px;
+      }
+      .main-row td .text-small a[href^="http://"] {
+          background-color: #cbe4f6;
+      }
+      .main-row td .text-small a[href^="https://"] {
+          background-color: #daf6e6;
+          max-width: 100px;
       }
       @media screen and (min-width: 768px) {
         .instances .sub-row td {
