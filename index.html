@@ -10,49 +10,57 @@
     <meta name="description" content="">
     <style>
       .nav-main, body {
-        border-left: 5px grey solid;
+          border-left: 5px grey solid;
       }
       @media screen and (min-width: 768px) {
         .instances .sub-row td {
           height: 0;
           padding: 0;
         }
-
+        
         .instances .sub-row .scale-arrow {
           position: relative;
           top: -10px;
           background: none;
         }
-
+        
         .instances .sub-row .scale-arrow::before{
           display: none;
         }
-
+        
         .instances .sub-row .scale-arrow button:first-child{
           margin-right: 27px;
         }
-
+        
         .instances .sub-row .scale-arrow button:last-child{
           margin-left: 27px;
         }
-
+        
         .instances .sub-row .pt-20, .instances .sub-row .pb-20{
           padding-top: 0 !important;
           padding-bottom: 0 !important;
         }
-
+        
         .instances .icon-play {
           opacity: 0;
         }
-
+        
         .instances .sub-row .vertical-middle{
           position: relative;
           top: -5px;
         }
-
+        
         .instances .group-row td:first-child button {
           float: right;
           margin-left: 5px;
+        }
+        
+        .project-menu {
+          left: -150px;
+          grid-template-columns: 150px 400px !important;
+        }
+        .project-menu .clusters *, .project-menu .global {
+          text-align: right;
         }
       }
     </style>
