@@ -12,12 +12,12 @@
       .nav-main, body {
           border-left: 5px grey solid;
       }
-      .instances .main-row td .text-small.clip {
+      .instances .main-row td[data-title="Name: "] .text-small.clip {
           white-space: normal;
           line-height: 20px;
           font-size: 0;
       }
-      .instances .main-row td .text-small a {
+      .instances .main-row td[data-title="Name: "] .text-small a {
           display: inline-block;
           box-sizing: border-box;
           height: 18px;
@@ -29,11 +29,11 @@
           font-size: 0;
           margin-right: 5px;
       }
-      .instances .main-row td .text-small a[href^="http://"]:hover, .main-row td .text-small a[href^="https://"]:hover {
+      .instances .main-row td[data-title="Name: "] .text-small a[href^="http://"]:hover, .main-row td[data-title="Name: "] .text-small a[href^="https://"]:hover {
           font-size: 12px;
           max-width: 300px;
       }
-      .instances .main-row td .text-small a[href^="http://"] {
+      .instances .main-row td[data-title="Name: "] .text-small a[href^="http://"] {
           background-color: #cbe4f6;
           max-width: 18px;
       }
