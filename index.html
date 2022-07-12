@@ -168,10 +168,11 @@
         // Color Cluster
         try {
           const cluster = document.querySelector('.nav-main span').textContent;
-          document.title = cluster;
+          const page = document.location.pathname.split('/');
           const color = hashColor(cluster);
           document.querySelector('.nav-main').style.borderLeftColor = color;
           document.body.style.borderLeftColor = color;
+          document.title = `${cluster.toUpperCase()} | ${page[page.length-1]}`;
         } catch(e) {}
       }
 
