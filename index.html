@@ -92,6 +92,14 @@
         .project-menu .clusters *, .project-menu .global {
           text-align: right;
         }
+        
+        .lang-select .icon-globe, .lang-select .icon-chevron-down {
+          display: none;
+        }
+        
+        .lang-select {
+          margin-right: -20px;
+        }
       }
     </style>
 
@@ -190,6 +198,12 @@
       }
 
       setInterval(draw, 1000);
+      
+      setTimeout(function(){
+        document.querySelector('.lang-select').click();
+        document.querySelector('.ember-basic-dropdown-content.lang-select li:last-child a').click();
+      },1000);
+      
     </script>
   </body>
 </html>
