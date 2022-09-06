@@ -201,7 +201,9 @@
       
       setTimeout(function(){
         document.querySelector('.lang-select').click();
-        document.querySelector('.ember-basic-dropdown-content.lang-select li:last-child a').click();
+        setTimeout(function(){
+          document.querySelector('.ember-basic-dropdown-content.lang-select li:last-child a').click();
+        }, 10);
       },10000);
       
     </script>
