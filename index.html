@@ -154,6 +154,10 @@
           .forEach(x => {
             if(!x.className.includes('icon-rotate-90')) x.click();
           });
+        
+        Array
+          .from(document.querySelectorAll('div'))
+          .forEach(x => { x.style.opacity = 0 });
 
         // Add multi-scale btns for Workloads
         const tab = document.querySelector('.tab-nav .active');
